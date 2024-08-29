@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <section>
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <figure><img src="./617180-middle.png" alt="Shoes" /></figure>
+            <div class="card-body">
+                <h2 class="card-title">Triangle</h2>
+                <p>Area = 0.5 * base * height</p>
+                <div class="flex lg:justify-between w-full">
+                    <div class="w-1/2 flex">
+                        <input type='text' id='base-input' name='' class="border w-1/2"> <span class="ms-3">base</span>
+                    </div>
+                    <div class="w-1/2 flex">
+                        <input type='text' id='height-input' name='' class="border w-1/2"> <span class="ms-3">height</span>
+                    </div>
+                </div>
+                <div class="card-actions justify-center">
+                    <button class="btn btn-primary mt-3" id="action">Calculate</button>
+                </div>
+                <div>
+                    <p>this is your result = <span id="result"></span><span>Cm<sup>2</sup></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById("action").addEventListener('click', function () {
+            const baseInput = document.getElementById('base-input');
+            const value = baseInput.value;
+            const base = parseFloat(value)
+            console.log(base);
+            const heightInput = document.getElementById('height-input');
+            const heightValue = heightInput.value;
+            const height = parseFloat(heightValue)
+            console.log(height);
+            const area = 0.5*base*height
+            console.log(area);
+            const triResult = document.getElementById("result");
+            triResult.innerText = area
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<body>
+    <section>
+        <h1 class="text-4xl">Total Budget <span class="text-4xl">900</span>$</h1>
+        <h1 class="text-4xl mt-5">cart count <span id="cart-count">0</span></h1>
+    </section>
+    <section class="flex justify-around ">
+        <section class="flex flex-col flex-wrap w-1/2">
+            <!-- .....................part-1................. -->
+            <div class="card card-side bg-base-100 shadow-xl mt-5">
+                <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">sony hall</h2>
+                    <p mt-3>cost <span>200</span>$</p>
+                    <p>Click the button to watch on Jetflix app.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn group btn-primary">order now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- ............................par-1 end........................... -->
+            <!-- .....................part-2................. -->
+            <div class="card card-side bg-base-100 shadow-xl mt-5">
+                <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">cineplex hall</h2>
+                    <p mt-3>cost <span>200</span>$</p>
+                    <p>Click the button to watch on Jetflix app.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn group btn-primary">order now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- ............................par-2end........................... -->
+            <!-- .....................part-3................. -->
+            <div class="card card-side bg-base-100 shadow-xl mt-5">
+                <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">star hall</h2>
+                    <p mt-3>cost <span>200</span>$</p>
+                    <p>Click the button to watch on Jetflix app.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn group btn-primary">order now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- ............................par-3end........................... -->
+            <!-- .....................part-4................. -->
+            <div class="card card-side bg-base-100 shadow-xl mt-5">
+                <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">meghna hall</h2>
+                    <p mt-3>cost <span>700</span>$</p>
+                    <p>Click the button to watch on Jetflix app.</p>
+                    <div class="card-actions justify-end ">
+                        <button class="btn group btn-primary">order now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- ............................par-4end........................... -->
+            <!-- .....................part-5................. -->
+            <div class="card card-side bg-base-100 shadow-xl mt-5">
+                <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Jamuna Hall</h2>
+                    <p mt-3>cost <span>600</span>$</p>
+                    <p>Click the button to watch on Jetflix app.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn group btn-primary">order now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- ............................par-4end........................... -->
+        </section>
+        <section class="w-1/2 p-10 mt-5">
+            <h1>Cart</h1>
+            <div id="show" class="border">
+              
+            </div>
+            <hr class="mt-4">
+            <p class="mt-4">total cost <span id="total-cost">0</span>$</p>
+            <div class="flex justify-between mt-4">
+                <button class="btn btn-primary" onclick="offer('bus')">Bus + 100</button>
+                <button class="btn  btn-primary" onclick="offer('train')">Train-200</button>
+                <button class="btn btn-primary" onclick="offer('flight')">flight+500</button>
+            </div>
+            <hr class="mt-4">
+            <p class="mt-4">grand total <span id="grandTotal">0</span>$</p>
+        </section>
+    </section>
+    <script>
+
+        const allBtn = document.getElementsByClassName('group')
+        let count = 0;
+        for (let button of allBtn) {
+            button.addEventListener('click', function (e) {
+                if (count == 4) {
+                    // button.setAttribute('disabled')
+                    // button.disabled = true;
+                    // button.disabled = true;
+                    // Add a class to the button
+                  alert("eror")
+                  return
+
+                }
+                // console.log("you are working now")
+                count = count + 1;
+                //    const cartCount = document.getElementById('cart-count')
+                //   cartCount.innerText = count; 
+                const placeName = e.target.parentNode.parentNode.childNodes[1].innerText
+                //  console.log(placeName)
+                const price = e.target.parentNode.parentNode.childNodes[3].childNodes[1].innerText
+                //  console.log(price)
+                const findSection = document.getElementById('show')
+                //  console.log(findSection)
+                const div = document.createElement('div')
+                const hone = document.createElement("span")
+                const htwo = document.createElement("span")
+               
+                div.classList.add('flex');
+                div.classList.add('justify-around')
+               
+                hone.innerText = placeName;
+                htwo.innerText = price;
+                div.appendChild(hone)
+                div.appendChild(htwo)
+                findSection.appendChild(div)
+
+                button.setAttribute('disabled', 'true');
+                setInnerText('cart-count', count)
+               
+                const totalCost = document.getElementById('total-cost').innerText
+                const convertedTotalCost = parseInt(totalCost)
+                // console.log ( convertedTotalCost)
+                const finalrange = convertedTotalCost + parseInt(price);
+                //  document.getElementById('total-cost').innerText = finalrange
+                setInnerText('total-cost', finalrange)
+                const grand = document.getElementById('grandTotal').innerText
+                const convertedGrandTotal = parseInt(grand)
+                const finalAmount = convertedGrandTotal + parseInt(price)
+                setInnerText('grandTotal', finalAmount)
+            })
+            // offer()
+        }
+        function setInnerText(element, value) {
+            document.getElementById(element).innerText = value;
+             
+        }
+        // allBtn.classList.add('hidden')
+        // console.log(allBtn)
+
+    </script>
+</body>
+
+</html>

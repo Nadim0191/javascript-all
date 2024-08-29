@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <style>
+        #part-1{
+            background-color: aqua;
+            width: 50%;
+            height: 50vh;
+        }
+        #part-2{
+            background-color: rgb(3, 26, 26);
+            width: 50%;
+            height: 50vh;
+
+        }
+        .hidden{
+            display: none;
+        }
+        button{
+            background-color: tomato;
+            padding: 20px;
+            border: 0;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        h1{
+            font-size: 4rem;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="part-1">
+
+        </div>
+        <div id="part-2" class="hidden">
+            <h1 class="text-9xl text-center text-red-500" id="text" >
+                y
+             </h1>
+        </div>
+        <button onclick="playGame()">change the background</button>
+        <button onclick="getRandomAlphabet()">getRandomAlphabet</button>
+    </section>
+    <script src="game.js"></script>
+    <script>
+        function getRandomAlphabet() {
+            const alphabetString = "abcdefghijklmnopqrstuvwxyz"
+            const alphabets = alphabetString.split("")
+            const randomNumber = Math.random()*25
+            const getNumber = Math.round(randomNumber)
+            // console.log(getNumber);
+            const number = alphabets [getNumber]
+              console.log(number);
+              const setText = document.getElementById('text')
+              const textChange = setText.innerText = number;
+        }
+    </script>
+</body>
+</html>

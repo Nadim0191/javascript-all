@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section>
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <figure><img src="./617180-middle.png" alt="Shoes" /></figure>
+            <div class="card-body">
+                <h2 class="card-title">plus calculator</h2>
+                <!-- <p>Area = 0.5 * base * height</p> -->
+                <div class="flex lg:justify-between w-full">
+                    <div class="w-1/2 flex">
+                        <input type='text' id='first-input' name='' class="border w-1/2"> 
+                    </div>
+                    <div class="w-1/2 text-center">
+                        <h1>+</h1>
+                    </div>
+                    <div class="w-1/2 flex">
+                        <input type='text' id='second-input' name='' class="border w-1/2"> 
+                    </div>
+                </div>
+                <div class="card-actions justify-center">
+                    <button class="btn btn-primary mt-3" id="action-button" onclick="plusCalculator()">Calculate</button>
+                </div>
+                <div>
+                    <p>this is your result = <span id="result-input"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function plusCalculator() {
+            console.log("this is check")
+            const firstInput = document.getElementById('first-input')
+            const firstValue = firstInput.value;
+            const finalFirstValue = parseFloat(firstValue)
+            console.log (finalFirstValue);
+            console.log("this is check")
+            const secondInput = document.getElementById('second-input')
+            const secondValue = secondInput.value;
+            const finalSecondValue = parseFloat(secondValue)
+            console.log (finalSecondValue);
+            const finalPlusValue = finalFirstValue + finalSecondValue
+            const resultInput = document.getElementById("result-input")
+            resultInput.innerText = finalPlusValue;
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <section>
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <figure><img
+                    src="https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/pdf_management_files/target_solutions/rectangle.png?fLlxGPcA68mOOFcN2JlXvSRQncVuEDzV"
+                    alt="Shoes" /></figure>
+            <div class="card-body">
+                <h2 class="card-title">rectangle</h2>
+                <p>Area =  Length * width</p>
+                <div class="flex lg:justify-between w-full">
+                    <div class="w-1/2 flex">
+                        <input type='text' id='length' name='' class="border w-1/2"> <span class="ms-3">length</span>
+                    </div>
+                    <div class="w-1/2 flex">
+                        <input type='text' id='width' name='' class="border w-1/2"> <span class="ms-3">width</span>
+                    </div>
+                </div>
+                <div class="card-actions justify-center">
+                    <button class="btn btn-primary mt-3" id="action" onclick="rectangleAresCalculate()">Calculate</button>
+                </div>
+                <div>
+                    <p>this is your result = <span id="result-rec"></span><span>sq-ft</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function rectangleAresCalculate() {
+            // console.log('this is test')
+            const lengthInput = document.getElementById('length');
+            const lvalue = lengthInput.value;
+            // console.log(lvalue)
+            const length = parseFloat(lvalue)
+            //  console.log(length)
+            const widthInput = document.getElementById('width');
+            const wvalue =  widthInput.value;
+            console.log(lvalue)
+            const width = parseFloat(wvalue)
+             console.log(width)
+             const area = length * width
+             console.log(area)
+             const recResult = document.getElementById('result-rec') 
+             recResult.innerText = area;
+        }
+    </script>
+</body>
+
+</html>
